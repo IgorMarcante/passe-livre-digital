@@ -1,0 +1,34 @@
+@model Web.ViewModels.AlterarSenhaVM
+
+@{
+     Layout = "_LayoutUnico";
+}
+
+<section id="services" class="services">
+
+        <div id="login">
+            <div class="container">
+                <div id="login-row" class="row justify-content-center align-items-center">
+                    <div id="login-column" class="col-md-6">
+                        <div id="login-box" class="col-md-12">
+                            <form asp-action="AlterarSenha" method="post" class="form-signin">
+                                <br><br>
+                                <h1 class="h3 mb-3 font-weight-normal"> @ViewBag.Title </h1>
+
+                                @Html.Hidden("Id")
+
+                                <div asp-validation-summary="All" class="text-danger"></div>
+                                <input class="form-control" required maxlength="20" type="password" asp-for="NovaSenha"
+                                    placeholder="Nova Senha" autofocus>
+                                <br>
+                                <input class="form-control" required maxlength="20" type="password"
+                                    asp-for="ConfirmarSenha" placeholder="Confirmar Nova Senha">
+                                <hr>
+                                <button class="btn btn-lg btn-primary btn-block ConfirmarSubmit" type="submit"> Salvar
+                                </button>
+                            </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

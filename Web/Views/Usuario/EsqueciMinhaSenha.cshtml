@@ -1,0 +1,18 @@
+
+@{
+    Layout = "_LayoutUnico";
+}
+    <section class="cta-full">
+        <div class="container aos-init aos-animate" style="width: 30%;">
+            <div class="text-center">
+                <h3>Esqueci minha senha</h3>
+                <div class="text">
+                    <form asp-action="EsqueciMinhaSenha" method="post" class="form-signin">
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <input name="CPF" type="text" class="form-control mb-3 cpf" placeholder="Digite seu CPF aqui"
+                            required maxlength="11" autofocus>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit">Recuperar Senha </button>
+                    </form>
+                </div>
+            </div>
+    </section>

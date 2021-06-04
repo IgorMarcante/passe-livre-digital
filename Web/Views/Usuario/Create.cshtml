@@ -1,0 +1,68 @@
+@model Web.Models.ViewModels.UsuarioVM
+@{
+    Layout = "_LayoutUnico";
+}
+
+
+    <section class="cta-full">
+        <div class="container aos-init aos-animate" style="width: 50%;">
+            <div class="text-center">
+                <h3>Cadastro</h3>
+                <div class="text">
+                    <form asp-action="Create">
+                        <br>
+                        <div class="form-row">
+                            <div class="col-md-8 mb-3">
+                                <label for="nomeInput" class="font-weight-bold">Nome Completo</label>
+                                <input type="text" asp-for="Nome" class="form-control" id="nomeInput" placeholder=""
+                                    required>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="cpfInput" class="font-weight-bold">CPF</label>
+                                <input type="text" asp-for="CPF" class="form-control cpf" id="cpfInput" placeholder=""
+                                    required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6 mb-3">
+                                <label for="exampleInputEmail1" class="font-weight-bold">Email</label>
+                                <input type="email" asp-for="Email" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="usuario@email.com" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="exampleInputEmail" class="font-weight-bold">Confirmar Email</label>
+                                <input type="email" asp-for="ConfirmEmail" class="form-control" id="exampleInputEmail"
+                                    aria-describedby="emailHelp" placeholder="usuario@email.com" required>
+                                @* <span asp-validation-for="ConfirmEmail" class="text-danger">Os emails não são iguais.
+                                    Tente novamente.</span> *@
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6 mb-3">
+                                <label for="exampleInputPassword1" class="font-weight-bold">Senha</label>
+                                <input type="password" asp-for="Senha" class="form-control" id="exampleInputPassword1"
+                                    placeholder="" required>
+                                <span asp-validation-for="Senha" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="exampleInputPassword" class="font-weight-bold">Confirmar Senha</label>
+                                <input type="password" asp-for="ConfirmSenha" class="form-control"
+                                    id="exampleInputPassword" placeholder="" required>
+                                <span asp-validation-for="ConfirmSenha" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="justify-content-center" align="center">
+                            <button class="btn btn-primary" type="submit">Cadastrar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    </section>
+<script>
+    $(document).ready(function () {
+        $('.cpf').mask('000.000.000-00', { reverse: true });
+    });
+</script>
+<partial name='_Alertas' />
+
