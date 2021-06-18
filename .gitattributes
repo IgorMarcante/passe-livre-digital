@@ -1,0 +1,5 @@
+*.js linguist-language=C#
+*.css linguist-language=C#
+
+dist/* linguist-vendored
+plugins/* linguist-vendored
